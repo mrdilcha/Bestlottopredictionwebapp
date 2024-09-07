@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilcha Prediction</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        .login-container {
+            display: none;
+            /* Add your login page styles here */
+        }
+        #error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-container" class="login-container">
+        <h2>Login to Dilcha Prediction</h2>
+        <input type="password" id="password" placeholder="Enter password">
+        <button onclick="login()">Login</button>
+        <p id="error-message"></p>
+    </div>
+
+    <div id="app-container" class="container" style="display:none;">
+        <h1><span class="white-text">Dilcha</span> <span class="red-text">Prediction</span></h1>
+        <form id="prediction-form" onsubmit="handlePrediction(event)">
+            <label for="user-input">Enter the last 5 outcomes (b for Big, s for Small):</label>
+            <input type="text" id="user-input" maxlength="5" required>
+            <button type="submit">Check Result</button>
+        </form>
+
+        <div id="checking-message" style="display:none;">Checking Servers...</div>
+
+        <div id="results-container" style="display:none;">
+            <div id="server-results"></div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+    <script src="logic.js"></script>
+</body>
+</html>
